@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Page2</title>
+</head>
+<body>
+<button onclick="window.watch.init(fileList);">连接</button>
+<button onclick="window.watch.disconnect();">断开</button>
+
+<script>
+	var fileList=[
+		"/Users/lyt9304/workspace/watch-refresh/resource/javascript/a.js",
+		"/Users/lyt9304/workspace/watch-refresh/resource/stylesheet/b.css"
+	];
+</script>
+<script src="socket.io-1.4.0.js"></script>
+<script src="client.js"></script>
+</body>
+</html>
