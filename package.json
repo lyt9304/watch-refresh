@@ -1,0 +1,29 @@
+{
+  "name": "watch-refresh",
+  "version": "1.0.0",
+  "description": "socket node watch",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lyt9304/watch-refresh.git"
+  },
+  "keywords": [
+    "socket",
+    "node",
+    "watch"
+  ],
+  "author": "lyt9304",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lyt9304/watch-refresh/issues"
+  },
+  "homepage": "https://github.com/lyt9304/watch-refresh",
+  "dependencies": {
+    "chokidar": "^1.4.3",
+    "socket.io": "^1.4.5"
+  }
+}
