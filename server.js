@@ -11,11 +11,11 @@ var chokidar=require("chokidar");
 var util=require("./util");
 var log=require("./log");
 var path=require("path");
+var fs=require("fs")
 
 server.listen(port, function () {
 	console.log('Server listening at port %d', port);
 });
-
 
 /**
  * pageOffice记录现在保持连接的页面
@@ -100,7 +100,7 @@ io.on('connection',function(socket){
 		.on('change', function (file) {
 			log.info("File:" + file + " has been changed");
 			if(resourceOffice[file] && resourceOffice.length!=0 && util.contains(resourceOffice[file],socket.name)){
-				socket.emit("change",{file:path.basename(file)});
+				socket.emit("change",{file:path.basename(file),source:file});
 			}
 		})
 		.on('unlink', function (file) {

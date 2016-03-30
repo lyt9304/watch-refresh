@@ -20,16 +20,48 @@
 			this.socket.emit("register",{pageId:this.pageId,fileList:this.fileList});
 		},
 		changeResource: function () {
+			var that=this;
 			this.socket.on("change", function (data) {
-				console.log(data);
-				console.log("File: "+data.file+" has been changed!");
+				//console.log(data);
+				var fileName=data.file;
+				var filePath=data.source;
+				if(/\.css/.test(fileName)){
+					that.changecss(fileName,filePath);
+				} else if (/\.js/.test(fileName)){
+					that.changejs(fileName,filePath);
+				} else {
+					console.log("未知类型的文件!");
+				}
+				console.log("File: "+ fileName +" has been changed!");
 			});
 		},
-		changecss: function (data) {
-			console.log("css File: "+data+" has been changed!");
+		changecss: function (name,path) {
+			this.mask.open();
+			var rname=new RegExp(name);
+			var links=document.getElementsByTagName("link");
+			for (var i = 0; i < links.length; i++) {
+				var obj = links[i];
+				var href = obj.href;
+				if(rname.test(href)){
+					obj.href=path;
+				}
+			}
+			console.log("css File: "+ name +" has been changed!");
+			this.mask.done(name);
 		},
-		changejs: function (data) {
-			console.log("js File: "+data+" has been changed!");
+		changejs: function (name,path) {
+			var rname=new RegExp(name);
+			var scripts=document.getElementsByTagName("script");
+			for (var i = 0; i < scripts.length; i++) {
+				var obj = scripts[i];
+				var src = obj.src;
+				if(rname.test(src)){
+					obj.src=path;
+					console.log("src changed!");
+					console.log(obj);
+				}
+			}
+			console.log("js File: "+ name +" has been changed!");
 		}
 	}
 })();
