@@ -23,12 +23,12 @@
 				console.log("File: "+data.file+" has been changed!");
 			});
 		},
-		//changecss: function (data) {
-		//	console.log("css File: "+data+" has been changed!");
-		//},
-		//changejs: function (data) {
-		//	console.log("js File: "+data+" has been changed!");
-		//},
+		changecss: function (data) {
+			console.log("css File: "+data+" has been changed!");
+		},
+		changejs: function (data) {
+			console.log("js File: "+data+" has been changed!");
+		},
 		disconnect: function(){
 			console.log("disconnecting");
 			this.socket.emit("disconnect",{pageId:this.pageId,fileList:this.fileList});
