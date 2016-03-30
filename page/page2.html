@@ -3,14 +3,11 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Page2</title>
-	<link rel="stylesheet" href="http://s.baixing.net/m/css/page2.css">
 </head>
 <body>
 <button onclick="window.watch.init(fileList);">连接</button>
 <button onclick="window.watch.disconnect();">断开</button>
 
-
-<script src="http://s.baxing.net/m/javascript/lib.js"></script>
 <script>
 	var fileList=[
 		"/Users/lyt9304/workspace/watch-refresh/resource/javascript/a.js",
@@ -18,11 +15,7 @@
 	];
 </script>
 <script src="socket.io-1.4.0.js"></script>
-<script src="client.js"></script>
 <script src="loading.js"></script>
-<script>
-	var mask=new LivereloadMask();
-	mask.open();
-</script>
+<script src="client.js"></script>
 </body>
 </html>
