@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "build": "browserify src/client.js > dist/socket-bundle.js"
+    "build": "gulp"
   },
   "repository": {
     "type": "git",
@@ -26,7 +26,11 @@
   "dependencies": {
     "browserify": "^13.0.0",
     "chokidar": "^1.4.3",
+    "gulp": "^3.9.1",
+    "gulp-uglify": "^1.5.3",
     "socket.io": "^1.4.5",
-    "socket.io-client": "^1.4.5"
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "vinyl-transform": "^1.0.0"
   }
 }
