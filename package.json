@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "build": "browserify src/client.js > dist/socket-bundle.js"
   },
   "repository": {
     "type": "git",
@@ -23,7 +24,9 @@
   },
   "homepage": "https://github.com/lyt9304/watch-refresh",
   "dependencies": {
+    "browserify": "^13.0.0",
     "chokidar": "^1.4.3",
-    "socket.io": "^1.4.5"
+    "socket.io": "^1.4.5",
+    "socket.io-client": "^1.4.5"
   }
 }
