@@ -3,21 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Page1</title>
-	<link rel="stylesheet" href="original/stylesheet/c.css">
-	<link rel="stylesheet" href="original/stylesheet/a.css">
+	<link rel="stylesheet" href="../resource/stylesheet/a.css">
 </head>
 <body>
 <div id="test">测试看看会不会变色!</div>
-<button onclick="window.watch.init(fileList);">连接</button>
-<button onclick="window.watch.disconnect();">断开</button>
+<button onclick="window.booster.init();">连接</button>
 
-<script src="original/javascript/a.js"></script>
-<script>
-	var fileList=[
-		"/Users/lyt9304/workspace/watch-refresh/resource/javascript/a.js",
-		"/Users/lyt9304/workspace/watch-refresh/resource/stylesheet/a.css"
-	];
-</script>
+<script src="../resource/javascript/a.js"></script>
 <script src="socket.io-1.4.0.js"></script>
 <script src="loading.js"></script>
 <script src="client.js"></script>
