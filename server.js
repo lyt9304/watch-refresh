@@ -3,7 +3,6 @@
  */
 
 var chokidar=require("chokidar");
-var util=require("./util");
 var log=require("./log");
 var path=require("path");
 
